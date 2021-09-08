@@ -52,7 +52,7 @@ async function onYouTubeIframeAPIReady() {
             'autoplay': 1,
             'controls': 0,
             'autohide': 1,
-            'mute': 0,
+            'mute': 1,
             'origin': 'https://jhoooooo.github.io/'
             }
     });
