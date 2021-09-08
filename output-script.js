@@ -2,7 +2,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const apiKey = urlParams.get('key') //?key=name
-const channelId = urlParams.get('channelid') //?channelid=name
+const channelId = urlParams.get('channelId') //?channelid=name
 
 // End URL Query
 
