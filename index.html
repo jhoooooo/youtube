@@ -20,23 +20,24 @@
         <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0">
             <div class="container my-auto">
                 <div class="row justify-content-center">
-                    <div class="col text-center">
+                    <div class="col-md-6 text-center">
+                        <span class="text-muted m-3">Automaticly grab your latest Youtube video to use it as browser source for OBS.</span>
                         <div>
                             <div class="mb-3">
-                                <label for="input1" class="form-label"  name="input1">Youtube API Key</label>
+                                <label for="input1" class="form-label"  name="input1">Youtube API Key <span data-bs-toggle="tooltip" data-bs-placement="right" title="How to get Youtube API">[<a href="https://blog.hubspot.com/website/how-to-get-youtube-api-key" target="_blank">?</a>]</span></label>
                                 <input type="text" class="form-control" id="input1" placeholder="XXXXXXXXXXXXXX">
                             </div>
                             <div class="mb-3">
-                                <label for="input2" class="form-label"  name="input2">Channel ID</label>
+                                <label for="input2" class="form-label"  name="input2">Channel ID <span data-bs-toggle="tooltip" data-bs-placement="right" title="Youtube >
+                            Settings > Advanced settings > channel ID">[?]</span></label>
                                 <input type="text" class="form-control" id="input2" placeholder="XXXXXXXXXXXXXX">
                             </div>
-                            <button type="button" class="btn btn-primary" onClick="generator()">Generate URL</button><br>
-                            <div class="mb-3">
-                                <textarea class="form-control" id="result" name="result" rows="3" >
-                                </textarea>
-                            </div>
+                            <button type="button" class="btn btn-primary m-2" onClick="generator()">Generate URL</button>
+                                <div class="input-group mb-3">
+                                    <textarea class="form-control" id="result" name="result" rows="3" style="resize: none;"></textarea>
+                                    <button class="btn btn-outline-secondary" type="button" data-clipboard-action="copy" data-clipboard-target="#result">Copy</button>
+                                </div>
                         </div>
-
 
                     </div>
                 </div>
@@ -49,6 +50,7 @@
     <!-- Section 01 Ends-->
     <!-- Bootstrap core JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 
     <script src="script.js"></script>
 </body>
