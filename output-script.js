@@ -3,6 +3,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const apiKey = urlParams.get('key') //&key=name
 const channelId = urlParams.get('channelId') //&channelid=name
+const mute = urlParams.get('mute') //&mute=1
 
 // End URL Query
 
@@ -52,7 +53,7 @@ async function onYouTubeIframeAPIReady() {
             'autoplay': 1,
             'controls': 0,
             'autohide': 1,
-            'mute': 1,
+            'mute': mute,
             'origin': 'https://jhoooooo.github.io/'
             }
     });
