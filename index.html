@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jho / Youtube OBS</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Section 01 -->
+    <!-- WELCOME -->
+    <section id="ending-screen">
+        <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0">
+            <div class="container my-auto">
+                <div class="row justify-content-center">
+                    <div class="col text-center">
+                        <div>
+                            <div class="mb-3">
+                                <label for="input1" class="form-label"  name="input1">Youtube API Key</label>
+                                <input type="text" class="form-control" id="input1" placeholder="XXXXXXXXXXXXXX">
+                            </div>
+                            <div class="mb-3">
+                                <label for="input2" class="form-label"  name="input2">Channel ID</label>
+                                <input type="text" class="form-control" id="input2" placeholder="XXXXXXXXXXXXXX">
+                            </div>
+                            <button type="button" class="btn btn-primary" onClick="generator()">Generate URL</button><br>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="result" name="result" rows="3" >
+                                </textarea>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 01 Ends -->
+
+    <!-- end hero -->
+    <!-- Section 01 Ends-->
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
