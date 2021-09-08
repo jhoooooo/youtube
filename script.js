@@ -6,7 +6,7 @@ function generator() {
     const browserurl = 'https://jhoooooo.github.io/youtube/output'
     var result;
 
-    result = browserurl + '?key=' + apiInput + '?channelId=' + channelInput;
+    result = browserurl + '?key=' + apiInput + '&channelId=' + channelInput;
 
     document.getElementById('result').innerHTML = result;
     console.log(result);
