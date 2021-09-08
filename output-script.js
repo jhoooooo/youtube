@@ -59,4 +59,5 @@ async function onYouTubeIframeAPIReady() {
     });
 }
 
+console.log(mute);
 main();
