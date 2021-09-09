@@ -1,3 +1,6 @@
+// Youtube Search Api = 100 points - https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=date&type=video&channelId=[ChannelId]&maxResults=1&key=[YOUR_API_KEY]
+// Youtube Activities API = 1 Point - https://youtube.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&maxResults=1&key=[YOUR_API_KEY]
+
 // URL Query
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -7,8 +10,11 @@ const mute = urlParams.get('mute') //&mute=1
 
 // End URL Query
 
+console.log(mute);
+console.log(apiKey);
+console.log(channelId);
 let jsondata2 = "";
-let apiUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=date&type=video&"
+let apiUrl = "https://youtube.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&maxResults=1&"
 let fullUrl = apiUrl + 'key=' + apiKey + '&channelId=' + channelId;
 
 // async function getJson(url) {
@@ -29,9 +35,11 @@ async function getJson(url) {
 async function main() {
     jsondata2 = await getJson(fullUrl)
     console.log(jsondata2);
-    console.log('Video ID: ', jsondata2.items[0].id.videoId);
+    console.log('Lastest Video Title: ', jsondata2.items[0].snippet.title);
+    console.log('Upload Date: ', jsondata2.items[0].snippet.publishedAt);
+    console.log('Video ID: ', jsondata2.items[0].contentDetails.upload.videoId);
     console.log('HD Thumbnail URL: ', jsondata2.items[0].snippet.thumbnails.high.url);
-    console.log('Max Res Thumbnail: ', 'https://img.youtube.com/vi/' + jsondata2.items[0].id.videoId + '/maxresdefault.jpg')
+    console.log('Max Res Thumbnail: ', jsondata2.items[0].snippet.thumbnails.maxres.url);
 }
 
 var tag = document.createElement('script');
@@ -44,20 +52,16 @@ async function onYouTubeIframeAPIReady() {
     video = new YT.Player('player', {
         height: 360,
         width: 640,
-        videoId: jsondata2.items[0].id.videoId,
+        videoId: jsondata2.items[0].contentDetails.upload.videoId,
         playerVars: {
-            'fs': 0,
             'modestbranding': 1,
-            'playsinline': 1,
-            'rel': 0,
             'autoplay': 1,
             'controls': 0,
             'autohide': 1,
-            'mute': mute,
+            'mute': 0,
             'origin': 'https://jhoooooo.github.io/'
             }
     });
 }
 
-console.log(mute);
 main();
