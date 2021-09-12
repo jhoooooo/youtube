@@ -65,6 +65,8 @@ async function onYouTubeIframeAPIReady() {
             'autoplay': autoplay,
             'controls': 0,
             'autohide': 1,
+            'start': 0,
+            'end': 30,
             'mute': mute,
             'origin': 'https://jhoooooo.github.io/'
             }
