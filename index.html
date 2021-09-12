@@ -60,12 +60,12 @@
                                 <div class="wisget-option mb-2">
                                     <label class="label d-block"><strong>Widget Option</strong></label>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"">
-                                        <label class=" form-check-label" for="inlineCheckbox1">Autoplay <span data-bs-toggle="tooltip" data-bs-placement="right" title="Limited to first 30 seconds only.">[?]</span></label>
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                        <label class=" form-check-label" for="inlineCheckbox1">Autoplay <span data-bs-toggle="tooltip" data-bs-placement="right" title="Currently limited to first 30 seconds only.">[?]</span></label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"">
-                                        <label class=" form-check-label" for="inlineCheckbox2">Mute Audio <span data-bs-toggle="tooltip" data-bs-placement="right" title="Recommened to enable. You wont be able to turn off the audio if obs scene changes while the video is playing.">[?]</span></label>
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                        <label class=" form-check-label" for="inlineCheckbox2">Mute Audio</label>
                                     </div>
                                 </div>
                                 <div class="mb-2">
@@ -102,10 +102,37 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal fade" id="setting" tabindex="-1" aria-labelledby="OBS settings" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content bg-dark">
+                                <div class="modal-header border-0">
+                                    <h5 class="modal-title" id="staticBackdropLabel">OBS Browser source settings</h5>
+                                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>URL: Your generated URL</li>
+                                        <li>Width & Height: </li>
+                                        <ul>
+                                            <li>Video only: Width 640px Height 360px</li>
+                                            <li>Ending Screen: Width 1280px Height 720px</li>
+                                            <li>Thumbnail: Width 640px Height 360px</li>
+                                        </ul>
+                                        <li>Use custom framerate: Untick</li>
+                                        <li>Control audio via OBS: Untick</li>
+                                        <li>Custom CSS: None</li>
+                                        <li>Shutdown source when not visible: Tick</li>
+                                        <li>Refresh browser when scene becomes active : Tick</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer text-small p-2">
-                    <span> <a href="#modal" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#modal">Why?</a>
-                        • <a href="https://twitter.com/JHOOOOOOOOOOOOQ" target="_blank" rel="noopener noreferrer">Twitter</a> • <a href="https://ko-fi.com/jhooo" target="_blank" rel="noopener noreferrer">Ko-fi</a> • Made by jho</span>
+                    <span><a href="#setting" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#setting">OBS Settings</a>
+                        • <span> <a href="#modal" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#modal">Why?</a>
+                            • <a href="https://twitter.com/JHOOOOOOOOOOOOQ" target="_blank" rel="noopener noreferrer">Twitter</a> • <a href="https://ko-fi.com/jhooo" target="_blank" rel="noopener noreferrer">Ko-fi</a> • Made by jho</span>
                 </div>
             </div>
         </div>
