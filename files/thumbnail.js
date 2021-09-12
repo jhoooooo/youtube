@@ -30,28 +30,29 @@ let fullUrl = apiUrl + 'key=' + apiKey + '&channelId=' + channelId;
 
 async function getJson(url) {
     let response = await fetch(url);
-    let data = await response.json()
+    let data = await response.json();
     return data;
 }
 
 async function logger() {
-    jsondata2 = await getJson(fullUrl)
+    //jsondata2 = await getJson(fullUrl)
     console.log(jsondata2);
     console.log('Lastest Video Title: ', jsondata2.items[0].snippet.title);
     console.log('Upload Date: ', jsondata2.items[0].snippet.publishedAt);
     console.log('Video ID: ', jsondata2.items[0].contentDetails.upload.videoId);
+    console.log('Default Thumbnail URL: ', jsondata2.items[0].snippet.thumbnails.default.url);
+    console.log('Standard Thumbnail URL: ', jsondata2.items[0].snippet.thumbnails.standard.url);
     console.log('HD Thumbnail URL: ', jsondata2.items[0].snippet.thumbnails.high.url);
     console.log('Max Res Thumbnail: ', jsondata2.items[0].snippet.thumbnails.maxres.url);
-    console.log(mute);
-    console.log(autoplay);
-    console.log(apiKey);
-    console.log(channelId);
+    console.log('Mute: ', mute);
+    console.log('Autoplay: ', autoplay);
+    console.log('API Key: ',apiKey);
+    console.log('Channel Id :', channelId);
 }
 
 // Image Embed
 async function imageEmbed() {
-    jsondata2 = await getJson(fullUrl)
-    console.log('data:', jsondata2.items[0].snippet.thumbnails.maxres.url);
+    jsondata2 = await getJson(fullUrl);
     var image = document.getElementById("thumbnail");
     image.src = jsondata2.items[0].snippet.thumbnails.maxres.url;
 }
