@@ -20,14 +20,14 @@
         <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0">
             <div class="container my-auto">
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-5 mt-lg-0">
                         <div class="description mb-3">
                             <h1 class="title">Jho // Youtube OBS</h1>
-                            <span class="text-muted">Automaticly grab your latest Youtube video and use it as browser source in OBS.</span>
+                            <span class="text-secondary">Automaticly grab your latest Youtube video and use it as browser source in OBS.</span>
                         </div>
                         <div>
-                            <div class="p-2 bg-main rounded">
-                                <div class="row mb-2">
+                            <div class="p-3 bg-main rounded">
+                                <div class="row mb-3">
                                     <div class="col">
                                         <label for="input1" class="form-label" name="input1"><strong>Youtube API Key </strong><span data-bs-toggle="tooltip" data-bs-placement="right" title="How to get Youtube API">[<a href="https://blog.hubspot.com/website/how-to-get-youtube-api-key" target="_blank">?</a>]</span></label>
                                         <input type="text" class="form-control" id="input1" placeholder="ec40745a-137b-11ec-82a832s0242ac1">
@@ -39,65 +39,67 @@
                                         <input type="text" class="form-control" id="input2" placeholder="UC4XaYXCjdr8BSb_dwJHQP4Q">
                                     </div>
                                 </div>
-                                <div class="widget-style mb-2">
+                                <div class="widget-style mb-3">
                                     <label class="label d-block"><strong>Widget Style</strong></label>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="styleoption" id="inlineRadio1" value="fullscreen" onclick="imagePreview(0)" checked>
-                                        <label class="form-check-label" for="inlineRadio1">Video only <span data-bs-toggle="tooltip" data-bs-placement="right" title="Size (Height: 360px,
-                                            Width: 640px)">[?]</span> </label>
+                                        <label class="form-check-label text-secondary" for="inlineRadio1">Video only</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="styleoption" id="inlineRadio2" value="ending" onclick="imagePreview(1)">
-                                        <label class="form-check-label" for="inlineRadio2">Ending Screen Style <span data-bs-toggle="tooltip" data-bs-placement="right" title="Size (Height: 1280px,
-                                            Width: 720px)">[?]</span></label>
+                                        <label class="form-check-label text-secondary" for="inlineRadio2">Ending Screen Style</label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="styleoption" id="inlineRadio3" value="thumbnail" onclick="imagePreview(2)">
-                                        <label class="form-check-label" for="inlineRadio3">Thumbnail Only <span data-bs-toggle="tooltip" data-bs-placement="right" title="Size (Height: 360px,
-                                            Width: 640px)">[?]</span></label>
+                                        <label class="form-check-label text-secondary" for="inlineRadio3">Thumbnail Only</label>
                                     </div>
                                 </div>
-                                <div class="wisget-option mb-2">
+                                <div class="wisget-option mb-3">
                                     <label class="label d-block"><strong>Widget Option</strong></label>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                        <label class=" form-check-label" for="inlineCheckbox1">Autoplay <span data-bs-toggle="tooltip" data-bs-placement="right" title="Currently limited to first 30 seconds only.">[?]</span></label>
+                                        <label class=" form-check-label text-secondary" for="inlineCheckbox1">Autoplay <span data-bs-toggle="tooltip" data-bs-placement="right" title="Default: 30 seconds. Add '&end=xx' after your URL to change it.">[?]</span></label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class=" form-check-label" for="inlineCheckbox2">Mute Audio</label>
+                                        <label class=" form-check-label text-secondary" for="inlineCheckbox2">Mute Audio</label>
                                     </div>
                                 </div>
                                 <div class="mb-2">
-                                    <button type="button" class="btn btn-primary btn-sm" onClick="generator()">Generate URL</button>
-                                    <button class="btn btn-primary btn-sm" type="button" data-clipboard-action="copy" data-clipboard-target="#result">Copy URL</button>
+                                    <button type="button" class="btn btn-blue btn-sm" onClick="generator()">Generate URL</button>
+                                    <button class="btn btn-blue btn-sm" type="button" data-clipboard-action="copy" data-clipboard-target="#result">Copy URL</button>
                                 </div>
                                 <div class="result-box mb-1">
-                                    <textarea class="form-control" id="result" name="result" rows="3" style="resize: none;"></textarea>
+                                    <textarea class="form-control result-box" id="result" name="result" rows="2" style=""></textarea>
                                 </div>
                                 <div class="alert alert-danger alert-url text-small" role="alert">
-                                    <strong>Do not share your Youtube API key or your generated URL. Keep it private.</strong>
+                                    <strong><i class="bi bi-exclamation-triangle-fill mx-1"></i>Do not share your Youtube API key or your generated URL. Keep it private.</strong>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                     <!-- Side 02 -->
-                    <div class="col-6 p-2">
-                        <h2>Preview</h2>
+                    <div class="col col-lg-6 p-2">
                         <div class="h-100 text-center align-self-center my-auto" style="min-height; 800px:">
+                            <h2>Style Preview</h2>
                             <img id="img-preview" src="images/Youtube-fullscreen.png" class="img-fluid" alt="Widget Preview">
                         </div>
                     </div>
-                    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="Why?" aria-hidden="true">
+                    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="FAQ" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content bg-dark">
                                 <div class="modal-header border-0">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Why?</h5>
+                                    <h5 class="modal-title" id="staticBackdropLabel">FAQ</h5>
                                     <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    For you to promote your Youtube channel, usually at the end of your stream. The widget will automaticly grab your latest Youtube video. So that everytime you switch to your ending screen, your latest video will be shown. Similar to youtube videos, that have related videos at the end of the video.
+                                    <dt>Why?</dt>
+                                    <dd class="text-secondary">For you to promote your Youtube channel, usually for use at the end of your stream similar to youtube videos, that have related videos at the end of them.</dd>
+                                    <dt>How to increase autoplay duration?</dt>
+                                    <dd class="text-secondary">Add <kbd>&end=30</kbd> after your URL. Change the number accordingly (in seconds).</dd>
+                                    <dt>Does the API have limit?</dt>
+                                    <dd class="text-secondary">Youtube API v3 have 10,000 points limit. Each query cost 1 point. Keep your key private.</dd>
                                 </div>
                             </div>
                         </div>
@@ -111,28 +113,28 @@
                                 </div>
                                 <div class="modal-body">
                                     <ul>
-                                        <li><strong>URL:</strong> Your generated URL</li>
+                                        <li><strong>URL:</strong> <span class="text-secondary">Your generated URL</span></li>
                                         <li><strong>Width & Height:</strong> </li>
                                         <ul>
-                                            <li><strong>Video only:</strong> Width 640px Height 360px</li>
-                                            <li><strong>Ending Screen:</strong> Width 1280px Height 720px</li>
-                                            <li><strong>Thumbnail:</strong> Width 640px Height 360px</li>
+                                            <li><strong>Video only:</strong> <span class="text-secondary">Width 640px Height 360px</span></li>
+                                            <li><strong>Ending Screen:</strong> <span class="text-secondary">Width 1280px Height 720px</span></li>
+                                            <li><strong>Thumbnail:</strong> <span class="text-secondary">Width 640px Height 360px</span></li>
                                         </ul>
-                                        <li><strong>Use custom framerate:</strong> Untick</li>
-                                        <li><strong>Control audio via OBS:</strong> Untick</li>
-                                        <li><strong>Custom CSS:</strong> None</li>
-                                        <li><strong>Shutdown source when not visible:</strong> Tick</li>
-                                        <li><strong>Refresh browser when scene becomes active :</strong> Tick</li>
+                                        <li><strong>Use custom framerate:</strong> <span class="text-secondary">Untick</span></li>
+                                        <li><strong>Control audio via OBS:</strong> <span class="text-secondary">Untick</span></li>
+                                        <li><strong>Custom CSS:</strong> <span class="text-secondary">None</span></li>
+                                        <li><strong>Shutdown source when not visible:</strong> <span class="text-secondary">Tick</span></li>
+                                        <li><strong>Refresh browser when scene becomes active :</strong> <span class="text-secondary">Tick</span></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="footer text-small p-2">
-                    <span><a href="#setting" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#setting">OBS Settings</a>
-                        • <span> <a href="#modal" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#modal">Why?</a>
-                            • <a href="https://twitter.com/JHOOOOOOOOOOOOQ" target="_blank" rel="noopener noreferrer">Twitter</a> • <a href="https://ko-fi.com/jhooo" target="_blank" rel="noopener noreferrer">Ko-fi</a> • Made by jho</span>
+                <div class="footer text-small text-secondary p-2">
+                    <span><a href="#setting" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#setting">OBS Settings & Sizing</a>
+                        • <span> <a href="#modal" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#modal">FAQ</a>
+                            • <a href="https://twitter.com/JHOOOOOOOOOOOOQ" target="_blank" rel="noopener noreferrer">Twitter</a> • <a href="https://ko-fi.com/jhooo" target="_blank" rel="noopener noreferrer">Ko-fi</a> • Made by jho • v202109130101PM</span>
                 </div>
             </div>
         </div>

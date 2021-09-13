@@ -12,6 +12,7 @@ const apiKey = urlParams.get('key'); //&key=name
 const channelId = urlParams.get('channelId');//&channelid=name
 const mute = urlParams.get('mute');
 const autoplay = urlParams.get('autoplay');
+const endplay = urlParams.get('end') || '30';
 // End URL Query
 
 
@@ -66,7 +67,7 @@ async function onYouTubeIframeAPIReady() {
             'controls': 0,
             'autohide': 1,
             'start': 0,
-            'end': 30,
+            'end': endplay,
             'mute': mute,
             'origin': 'https://jhoooooo.github.io/'
             }
