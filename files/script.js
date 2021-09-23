@@ -3,7 +3,16 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
-new ClipboardJS('.btn');
+var clipboard = new ClipboardJS('.btn');
+clipboard.on('success', function(e) {
+    if (e.text != "") { //only alert if text area not empty
+        alert("Copied.");
+    }
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+    e.clearSelection();
+});
 
 // Generate Browser Source URL
 
